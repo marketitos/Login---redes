@@ -1,6 +1,6 @@
 {% load static %}
 
-{{error}}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,12 @@
             <div class="formvalue">
                 <form method="POST">
                     {% csrf_token %}
+
+
                         <h2>Login</h2>
+                        <div class="error">
+                            {{error}}
+                        </div>
                         <div class="inputbox">
                             <ion-icon name="mail-outline"></ion-icon>
                             <input type="username" name="username" id="username" required>
@@ -30,7 +35,7 @@
                         </div>
                         <button>Log in</button>
                         <div class="register">
-                            <p>No tengo cuenta <a href="register.html">Registrarme</a></p>
+                            <p>No tengo cuenta <a href="signup.html">Registrarme</a></p>
                         </div>
                 </form>
             </div>

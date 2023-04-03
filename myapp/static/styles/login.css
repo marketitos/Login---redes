@@ -31,6 +31,15 @@ section{
     backdrop-filter: blur(10px);
 }
 
+.error{
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(158, 102, 102);
+    border-radius: 40px;
+    margin-bottom: 10px;
+}
+
 h2{
     font-size: 2em;
     color: white;
