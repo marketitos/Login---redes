@@ -2,13 +2,15 @@
 
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Log In</title>
     <link rel="stylesheet" href="{% static 'styles/login.css' %}">
 </head>
 <body>
@@ -24,7 +26,7 @@
                             {{error}}
                         </div>
                         <div class="inputbox">
-                            <ion-icon name="mail-outline"></ion-icon>
+                            <ion-icon name="person-outline"></ion-icon>
                             <input type="username" name="username" id="username" required>
                             <label for="">Usuario</label>
                         </div>
@@ -35,7 +37,7 @@
                         </div>
                         <button>Log in</button>
                         <div class="register">
-                            <p>No tengo cuenta <a href="signup.html">Registrarme</a></p>
+                            <p>No tengo cuenta <a href="{% url 'signup' %}">Registrarme</a></p>
                         </div>
                 </form>
             </div>

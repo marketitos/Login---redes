@@ -37,7 +37,26 @@ section{
 
 .titulo{
     color: white;
+    margin-top: 200px;
 }
+
+.login{
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.login p a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+.login p a:hover{
+    text-decoration: underline;
+}
+
+
+
 
 .error{
     color: white;
@@ -50,6 +69,7 @@ section{
 }
 
 h2{
+    margin-top: 10px;
 
     font-size: 2em;
     color: white;
@@ -121,13 +141,12 @@ h2{
     text-decoration: underline;
 }
 
-button{
+.boton{
+    border-radius: 40px;
     width: 100%;
     height: 40px;
-    border-radius: 40px;
     background-color: white;
     margin-bottom: 200px;
-    border: none;
     outline: none;
     cursor: pointer;
     font-size: 1em;
