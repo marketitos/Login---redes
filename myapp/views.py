@@ -24,7 +24,7 @@ def signup(request):
                 user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
                 user.save()
                 login(request, user)
-                return redirect('tareas')
+                return redirect('kiosco')
             except IntegrityError:
                 return render(request, 'signup.html',{
                 "form":UserCreationForm,
@@ -36,8 +36,8 @@ def signup(request):
             "error": 'Las contraseñas no coinciden'
             })
     
-def tareas(request):
-    return render(request, 'tareas.html')
+def kiosco(request):
+    return render(request, 'kiskco.html')
 
 
 def signin(request):
@@ -55,7 +55,7 @@ def signin(request):
              })
         else:
             login(request, user)
-            return redirect('tareas')
+            return redirect('kiosco')
             
         
 
