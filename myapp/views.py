@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.db import IntegrityError
+from .models import Cards
 
 # Create your views here.
 
@@ -37,7 +38,10 @@ def signup(request):
             })
     
 def kiosco(request):
-    return render(request, 'kiskco.html')
+    cards = Cards.objects.all()
+    return render(request, 'kiskco.html',{
+        'cards': cards
+    })
 
 
 def signin(request):
