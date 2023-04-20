@@ -1,8 +1,20 @@
 {% load static %}
-
-<div class="card" style="width: 18rem;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'styles/kiosco.css' %}">
+</head>
+<body>
+  
+  <div class="cards" style="width: 18rem;">
     <div class="card" style="width: 18rem;">
-        <img src="{{card.image}}" class="card-img-top" alt="...">
+        <div class="card-img-top">
+          {{card.image}}
+        </div>
         <div class="card-body">
           <h5 class="card-title">{{card.titulo}}</h5>
           <div class="precios">
@@ -13,3 +25,8 @@
             <a href="" class="boton">Ver mas</a>
         </div>
       </div>
+
+  
+</body>
+</html>
+

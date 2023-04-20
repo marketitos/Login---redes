@@ -1,12 +1,24 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
 
 *{
     font-family: 'Rajdhani', sans-serif;
+    color: white;
+
 }
+
+body{
+    background-image: url(13706.jpg);
+    background-size: cover;
+    
+}
+
+
 nav{
     background-color: rgba(224, 217, 217, 0);
     padding: 1rem 2rem;
     display: flex;
+
 }
 
 a{
@@ -14,49 +26,51 @@ a{
     
 }
 li{
-    color: black;
+    color: white;
     list-style: none;
-    float: left;
     margin-left: 20px;
     padding: 5px;
     font-weight: bold;
     font-size: 20px;    
+    text-align: center;
+    justify-content: center;
 }
 
 li:hover{
-    background-color: rgb(190, 187, 187);
+    background-color: rgb(48, 45, 45);
     border-radius: 5px;
+    width: max-content;
     
 }
 
 .precio{
     width: max-content;
     font-size: 20px;
+    color: white;
 }
 
 
 .precios{
     display: flex;
     gap: 7rem;
+    color: white;
 }
 
 .boton{
     text-decoration: none;
-    color: black;
+    color: white;
+
 }
 
 .card-title{
     text-align: center;
     margin-bottom: 20px;
+    color: white;
 }
 
-.Cartas{
-    float: left;
+.card{
+    background: transparent;
+    display: flex;
+    text-align: center;
 }
-
-.grid-layout{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-}
-
 
