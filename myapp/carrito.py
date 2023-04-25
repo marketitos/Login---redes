@@ -13,7 +13,9 @@ class carrito:
             self.carrito = carrito
 
 def agregar(self, Cards):
+    print(Cards)
     id = str(Cards.id)
+    
     if id not in self.carrito.keys():
         self.carrito[id]={
             "Cards_id":Cards.id,
