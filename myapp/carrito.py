@@ -22,7 +22,7 @@ def agregar(self, Cards):
             "cantidad":1,
         }
     else:
-        self.carrito[id]["cantidad"] +=1,
+        self.carrito[id]["cantidad"] +=1
         self.carrito[id]["precio"] += Cards.precio
     self.guardar()
 

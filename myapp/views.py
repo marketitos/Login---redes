@@ -65,26 +65,26 @@ def signin(request):
 
 def agregarProd(request, Cards_id):
     carrito= carrito(request)
-    cards = Cards.objects.get(id = Cards.id)
-    carrito.agregar(Cards)
+    card = Cards.objects.get(id = Cards_id)
+    carrito.agregar(card)
     return redirect("kiosco")
 
 def eliminarProd(request, Cards_id):
     carrito= carrito(request)
-    cards = Cards.objects.get(id = Cards.id)
-    carrito.eliminar(Cards)
+    card = Cards.objects.get(id = Cards_id)
+    carrito.eliminar(card)
     return redirect("kiosco")
 
 def clean(request, Cards_id):
     carrito= carrito(request)
-    cards = Cards.objects.get(id = Cards.id)
-    carrito.limpiar(Cards)
+    card = Cards.objects.get(id = Cards_id)
+    carrito.limpiar(card)
     return redirect("kiosco")
 
 def restarProd(request, Cards_id):
     carrito= carrito(request)
-    cards = Cards.objects.get(id = Cards.id)
-    carrito.restar(Cards)
+    card = Cards.objects.get(id = Cards_id)
+    carrito.restar(card)
     return redirect("kiosco")
 
             
