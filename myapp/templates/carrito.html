@@ -1,0 +1,41 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Carrito</th>
+            </tr>
+            <tr>
+                <th>Titulo: </th>
+                <th>Precio: </th>
+                <th>Cantidad: </th>
+            </tr>
+        </thead>
+        <tbody>|
+            {% if request.session.carrito.items %}
+            {% for key,value in request.session.carrito.items %}
+            <tr>
+                <th>{{value.titulo}}</th>
+                <th>{{value.price}}</th>
+                <th>{{value.cantidad}}</th>
+                    <a href="{% url 'Agregar' value.Cards_id %}">Agregar</a>
+                    <a href="{% url 'Restar' value.Cards_id %}">Restar</a>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <div>Sin Productos</div>
+            </tr>
+            {% endif %}
+            <tr>
+                <th>Total: </th>
+                <td>{{total_carrito}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+    <div><a href="{% url 'Limpiar' %}"></a>Limpiar</div>
+    <div><a href="#"></a>Guardar</div>
+
+
+</div>

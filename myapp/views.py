@@ -6,6 +6,8 @@ from django.contrib.auth import login, authenticate
 from django.db import IntegrityError
 from .models import Cards
 
+from myapp.carrito import carrito
+
 # Create your views here.
 
 
@@ -60,6 +62,31 @@ def signin(request):
         else:
             login(request, user)
             return redirect('kiosco')
+
+def agregarProd(request, Cards_id):
+    carrito= carrito(request)
+    cards = Cards.objects.get(id = Cards.id)
+    carrito.agregar(Cards)
+    return redirect("kiosco")
+
+def eliminarProd(request, Cards_id):
+    carrito= carrito(request)
+    cards = Cards.objects.get(id = Cards.id)
+    carrito.eliminar(Cards)
+    return redirect("kiosco")
+
+def clean(request, Cards_id):
+    carrito= carrito(request)
+    cards = Cards.objects.get(id = Cards.id)
+    carrito.limpiar(Cards)
+    return redirect("kiosco")
+
+def restarProd(request, Cards_id):
+    carrito= carrito(request)
+    cards = Cards.objects.get(id = Cards.id)
+    carrito.restar(Cards)
+    return redirect("kiosco")
+
             
         
 
