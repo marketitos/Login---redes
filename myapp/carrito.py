@@ -1,6 +1,5 @@
 from urllib import request
 
-
 class carrito:
     def __init__(self, request):
         self.request = request
@@ -13,19 +12,19 @@ class carrito:
             self.carrito = carrito
 
 def agregar(self, Cards):
-    print(Cards)
-    id = str(Cards.id)
     
-    if id not in self.carrito.keys():
-        self.carrito[id]={
-            "Cards_id":Cards.id,
-            "titulo":Cards.titulo,
-            "precio":Cards.precio,
-            "cantidad":1,
+    if str(Cards.id) not in self.carrito.keys():
+        self.carrito[Cards.id]={
+            "Cards_id": Cards.id,
+            "titulo": Cards.titulo,
+            "precio": str(Cards.price),
+            "cantidad": 1,
         }
     else:
-        self.carrito[id]["cantidad"] +=1
-        self.carrito[id]["precio"] += Cards.precio
+        for key, value in self.carrito.items():
+            if key == str(Cards.id):
+                value["cantidad"] = value["cantidad"] + 1
+                break
     self.guardar()
 
 
@@ -35,19 +34,21 @@ def guardar(self):
 
 
 def eliminar(self, Cards):
-    id = str(Cards.id)
-    if id in self.carrito:
-        del self.carrito[id]
+    Cards_id = str(Cards.id)
+    if Cards_id in self.carrito:
+        del self.carrito[Cards_id]
+        self.guardar()
 
 
 def restar(self, Cards):
-    id = str(Cards.id)
-    if id in self.carrito.keys():
-        self.carrito[id]["cantidad"] -=1,
-        self.carrito[id]["precio"] -= Cards.precio
-        if self.carrito[id]["cantidad"] <= 0 : 
-            self.eliminar(Cards)
-            self.guardar()
+    for key, value in self.carrito.items():
+        if key == str(Cards.id):
+            value["cantidad"] = value["cantidad"] - 1
+            if value["cantidad"] < 1:
+                self.eliminar(Cards)
+            break
+        else:
+            print("El producto no existe en el carrito")    
 
 def limpiar(self):
     self.session["carrito"] = {}

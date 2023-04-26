@@ -3,6 +3,8 @@ from django.db import models
 
 # Create your models here.
 
+## Crear un models que se llame producto con una foreign key de titulo y precio para poder hacer el carrito
+
 class Cards(models.Model):
     image = models.ImageField(null=True, blank=True, upload_to='images')
     titulo = models.CharField(max_length=200)

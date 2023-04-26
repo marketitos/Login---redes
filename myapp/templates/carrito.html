@@ -11,21 +11,32 @@
             </tr>
         </thead>
         <tbody>|
-            {% if request.session.carrito.items %}
-            {% for key, value in request.session.carrito.items %}
-                <tr>
-                    <th>{{value.titulo}}</th>
-                    <th>{{value.price}}</th>
-                    <th>{{value.cantidad}}</th>
-                        <a href="{% url 'Agregar' value.Cards_id %}">Agregar</a>
-                        <a href="{% url 'Restar' value.Cards_id %}">Restar</a>
+            {% if request.session.carro.items %}
+
+            {% for key, value in request.session.carro.items %}
+                <tr class="text-center">
+
+                    <td>{{value.titulo}}</td>
+                    <td>{{value.cantidad}}</td>
+                    <td>
+                        
+                        <a href="{% url 'carrito:Agregar' value.Cards_id %}"></a>
+
+                        <a href="{% url 'carro:restar' value.Cards_id %}"></a><br>
+                        {{value.price}} ARS
+                    </td>
+
                 </tr>
+
             {% endfor %}
-            {% else %}
+
+        {% else %}
+
             <tr>
                 <div>Sin Productos</div>
             </tr>
-            {% endif %}
+
+        {% endif %}
             <tr>
                 <th>Total: </th>
                 <td>{{total_carrito}}</td>
