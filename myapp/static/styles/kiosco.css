@@ -40,7 +40,6 @@ li{
     list-style: none;
     font-weight: bold;
     font-size: 30px; 
-    display: flex;
 }
 
 
@@ -111,8 +110,6 @@ li{
     height: 20px;
 
 }
-
-
 
 
 .ul_nav{
