@@ -13,23 +13,30 @@
 
 </head>
 <body>
-    <header>
-        <button class="cerrar_menu" id="abrir"><ion-icon name="reorder-three-outline" class="icono_barrita"></ion-icon></button>
-        
 
-        <nav class="active" id="nav">
-            <button class="cerrar_menu" id="cerrar"><ion-icon name="close-outline" class="icono_close"></ion-icon></button>
+        <nav class="nav-bar">
+            <ul class="ul_nav">
+                <li>
+                    <a href="" class="home">Home</a>
+                </li>
+                
+            </ul>
 
-          <ul class="lista_nav">
-            <li><a href="#">DDD</a></li>
-            <li><a href="#">SSS</a></li>
-            <li><a href="#">AAA</a></li>
-            <li><a href="#"></a></li>
-          </ul>    
+            <button class="cerrar_menu" id="abrir"><ion-icon name="reorder-three-outline" class="icono_barrita"></ion-icon></button>
+
+            <div class="scrollbar" id="scrollbar">
+                <button class="cerrar_menu" id="cerrar"><ion-icon name="close-outline" class="icono_close"></ion-icon></button>
+
+                <ul class="lista_nav">
+                    <li><a href="#">AMD</a></li>
+                    <li><a href="#">NVIDIA</a></li>
+                    <li><a href="#">PC</a></li>
+                    <li><a href="#"></a></li>
+                </ul>    
+            </div>
+
         </nav>
-      </header>
 
-   
         <div class="cartas">
             {% for card in cards %} 
                 {% include 'cartas/Card.html' %}

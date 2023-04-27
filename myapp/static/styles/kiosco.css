@@ -15,11 +15,11 @@ body{
 }
 
 
-nav{
+.scrollbar{
     display: flex;
     flex-direction: column;
     position: absolute;
-    background-color: white;
+    background-color: #99907D;
     padding: 2rem;
     box-shadow: 0 0 0 100vmax transparent;
     z-index: 10;
@@ -31,17 +31,16 @@ nav{
 
 a{
     text-decoration: none;
+    color: black;
     
 }
 li{
-    color: black;
+    margin: 0;
+    padding: 0;
     list-style: none;
-    margin-left: 20px;
-    padding: 5px;
     font-weight: bold;
-    font-size: 30px;    
-    text-align: center;
-    justify-content: center;
+    font-size: 30px; 
+    display: flex;
 }
 
 
@@ -83,13 +82,12 @@ li{
     display: flex;
     gap: 20px;
     justify-content: center;
-    z-index: 1;
     
 }
 
 
 .card:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .nav_visible{
@@ -113,7 +111,5 @@ li{
     height: 20px;
 
 }
-.home{
-    display: flex;
-    align-items: center;
-}
+
+

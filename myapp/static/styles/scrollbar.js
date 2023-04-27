@@ -1,15 +1,15 @@
 //Boton de menu
 
-const nav  = document.querySelector("nav");
+const scrollbar  = document.getElementById("scrollbar");
 const abrir  = document.getElementById("abrir");
 const cerrar  = document.getElementById("cerrar");
 
 
 abrir.addEventListener("click", () => {
-    nav.classList.add("nav_visible");
+    scrollbar.classList.add("nav_visible");
     console.log("hola")
 })
 
 cerrar.addEventListener("click", () => {
-    nav.classList.remove("nav_visible");
+    scrollbar.classList.remove("nav_visible");
 })
