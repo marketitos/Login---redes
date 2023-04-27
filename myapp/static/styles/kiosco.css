@@ -20,7 +20,7 @@ body{
     flex-direction: column;
     position: absolute;
     background-color: #99907D;
-    padding: 2rem;
+    padding: 1rem;
     box-shadow: 0 0 0 100vmax transparent;
     z-index: 10;
     width: 200px;
@@ -87,7 +87,7 @@ li{
 
 
 .card:hover{
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 .nav_visible{
@@ -113,3 +113,13 @@ li{
 }
 
 
+
+
+.ul_nav{
+    display: flex;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+}
