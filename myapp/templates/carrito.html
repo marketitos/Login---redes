@@ -11,9 +11,9 @@
             </tr>
         </thead>
         <tbody>|
-            {% if request.session.carro.items %}
+            {% if request.session.carrito.items %}
 
-            {% for key, value in request.session.carro.items %}
+            {% for key, value in request.session.carrito.items %}
                 <tr class="text-center">
 
                     <td>{{value.titulo}}</td>
@@ -45,8 +45,8 @@
     </table>
     <hr>
 
-    <div><a href="{% url 'Clean' %}"></a>Limpiar</div>
+    <div><a></a>Limpiar</div>
     <div><a href="#"></a>Guardar</div>
 
 
-</div>
+</div> 

@@ -8,18 +8,25 @@
 }
 
 body{
-    background-image: url(13706.jpg);
+    /* background-image: url(13706.jpg); */
+
     background-size: cover;
     
 }
 
 
 nav{
-    background-color: rgba(224, 217, 217, 0);
-    padding: 1rem 2rem;
     display: flex;
-    justify-content: center;
-
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax transparent;
+    z-index: 10;
+    width: 200px;
+    height: 100%;
+    transition: all 500ms;
+    transform: translateX(-100%);
 }
 
 a{
@@ -27,52 +34,47 @@ a{
     
 }
 li{
-    color: white;
+    color: black;
     list-style: none;
     margin-left: 20px;
     padding: 5px;
     font-weight: bold;
-    font-size: 20px;    
+    font-size: 30px;    
     text-align: center;
     justify-content: center;
 }
 
-li:hover{
-    background-color: rgb(48, 45, 45);
-    border-radius: 5px;
-    width: max-content;
-    
-}
 
 .precio{
     width: max-content;
     font-size: 20px;
-    color: white;
+    color: black;
 }
 
 
 .precios{
     display: flex;
     gap: 7rem;
-    color: white;
+    color: black;
 }
 
 .boton{
     text-decoration: none;
-    color: white;
+    color: black;
 
 }
 
 .card-title{
     text-align: center;
     margin-bottom: 20px;
-    color: white;
+    color: black;
 }
 
 .card{
     background: transparent;
     display: flex;
     text-align: center;
+    border: 1px solid black;
 }
 
 
@@ -81,6 +83,8 @@ li:hover{
     display: flex;
     gap: 20px;
     justify-content: center;
+    z-index: 1;
+    
 }
 
 
@@ -88,3 +92,28 @@ li:hover{
     transform: scale(1.05);
 }
 
+.nav_visible{
+    transform: translateX(0);
+}
+.abrir_menu, .cerrar_menu{
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+}
+
+.icono_barrita{
+    color: black;
+    width: 50px;
+    height: 50px;
+}
+
+.icono_close{
+    color: black;
+    width: 50px;
+    height: 20px;
+
+}
+.home{
+    display: flex;
+    align-items: center;
+}

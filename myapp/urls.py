@@ -1,14 +1,15 @@
 from unicodedata import name
 from django.urls import path
 from myapp import views
-from myapp.carrito import agregar, eliminar, limpiar, restar
+#from myapp.carrito import agregar, eliminar, limpiar, restar 
 
 urlpatterns = [
     path('', views.signup, name="signup"),
     path('kiosco/', views.kiosco, name='kiosco'),
     path('signin/', views.signin, name='signin'),
-    path('agregar/<int:Cards_id>/', agregar, name="Agregar"),
-    path('eliminar/<int:Cards_id>/', eliminar, name="Eliminar"),
-    path('restar/<int:Cards_id>/', restar, name="Restar"),
-    path('limpiar/', limpiar, name="Clean"),
+    
+    #path('agregar/<int:Cards_id>', agregar, name="Agregar"),
+    #path('eliminar/<int:Cards_id>', eliminar, name="Eliminar"),
+    #path('restar/<int:Cards_id>', restar, name="Restar"),
+    #path('limpiar/', limpiar, name="Clean")
 ]

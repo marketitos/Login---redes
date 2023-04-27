@@ -1,4 +1,5 @@
 from urllib import request
+from .models import Cards
 
 class carrito:
     def __init__(self, request):
@@ -12,9 +13,9 @@ class carrito:
             self.carrito = carrito
 
 def agregar(self, Cards):
-    
-    if str(Cards.id) not in self.carrito.keys():
-        self.carrito[Cards.id]={
+    id = str(Cards.id)
+    if id not in self.carrito.keys():
+        self.carrito[id]={
             "Cards_id": Cards.id,
             "titulo": Cards.titulo,
             "precio": str(Cards.price),
@@ -22,7 +23,7 @@ def agregar(self, Cards):
         }
     else:
         for key, value in self.carrito.items():
-            if key == str(Cards.id):
+            if key == id:
                 value["cantidad"] = value["cantidad"] + 1
                 break
     self.guardar()
@@ -34,9 +35,9 @@ def guardar(self):
 
 
 def eliminar(self, Cards):
-    Cards_id = str(Cards.id)
-    if Cards_id in self.carrito:
-        del self.carrito[Cards_id]
+    id = str(Cards.id)
+    if id in self.carrito:
+        del self.carrito[id]
         self.guardar()
 
 
@@ -53,4 +54,3 @@ def restar(self, Cards):
 def limpiar(self):
     self.session["carrito"] = {}
     self.session.modified = True
-
