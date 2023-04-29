@@ -119,6 +119,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+LOGIN_REDIRECT_URL = 'kiosco'
+LOGOUT_REDIRECT_URL = 'signin'
+
 MEDIA_URL='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

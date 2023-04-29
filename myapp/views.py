@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.db import IntegrityError
 from .models import Cards
  
@@ -27,7 +27,7 @@ def signup(request):
                 user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
                 user.save()
                 login(request, user)
-                return redirect('kiosco')
+                return redirect('signin')
             except IntegrityError:
                 return render(request, 'signup.html',{
                 "form":UserCreationForm,
@@ -62,6 +62,8 @@ def signin(request):
         else:
             login(request, user)
             return redirect('kiosco')
+
+
 
 #def agregarProd(request, Cards_id):
     #carrito= carrito(request)

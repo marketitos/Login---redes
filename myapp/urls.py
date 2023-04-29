@@ -1,6 +1,8 @@
 from unicodedata import name
 from django.urls import path
 from myapp import views
+from .views import logout
+from django.contrib.auth.views import logout_then_login
 #from myapp.carrito import agregar, eliminar, limpiar, restar 
 
 urlpatterns = [

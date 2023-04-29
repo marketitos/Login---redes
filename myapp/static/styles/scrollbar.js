@@ -1,15 +1,7 @@
 //Boton de menu
 
-const scrollbar  = document.getElementById("scrollbar");
-const abrir  = document.getElementById("abrir");
-const cerrar  = document.getElementById("cerrar");
+const barritas = document.querySelector('.cerrar_menu');
 
-
-abrir.addEventListener("click", () => {
-    scrollbar.classList.add("nav_visible");
-    console.log("hola")
-})
-
-cerrar.addEventListener("click", () => {
-    scrollbar.classList.remove("nav_visible");
+barritas.addEventListener('click', function(){
+    document.getElementById('sidebar').classList.toggle('active');
 })
