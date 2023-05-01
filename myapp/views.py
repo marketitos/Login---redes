@@ -63,6 +63,9 @@ def signin(request):
             login(request, user)
             return redirect('kiosco')
 
+def logout_ashe(request):
+    logout(request)
+    return redirect('signin')
 
 
 #def agregarProd(request, Cards_id):
@@ -75,7 +78,7 @@ def signin(request):
     #carrito= carrito(request)
     #card = Cards.objects.get(id = Cards_id)
     #carrito.eliminar(card)
-    return redirect("kiosco")
+    #return redirect("kiosco")
 
 #def clean(request, Cards_id):
     #carrito= carrito(request)

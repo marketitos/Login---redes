@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.signup, name="signup"),
     path('kiosco/', views.kiosco, name='kiosco'),
     path('signin/', views.signin, name='signin'),
+    path('logout/', views.logout_ashe, name="logout")
     
     #path('agregar/<int:Cards_id>', agregar, name="Agregar"),
     #path('eliminar/<int:Cards_id>', eliminar, name="Eliminar"),

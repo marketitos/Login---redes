@@ -15,33 +15,40 @@
 <body>
 
         <nav class="nav-bar">
-            <ul class="ul_nav">
-
-                <div id="sidebar">
-                    <div class="toggle-btn">
-                        <button class="cerrar_menu" id="abrir"><ion-icon name="reorder-three-outline" class="icono_barrita"></ion-icon></button>
+                <div class="nav">
+                    <div id="sidebar">
+                        <div class="toggle-btn">
+                            <button class="cerrar_menu" id="abrir"><ion-icon name="reorder-three-outline" class="icono_barrita"></ion-icon></button>
+                        </div>
+                        <ul>
+                            <li> <a href="">AMD</a> </li>
+                            <li> <a href="">NVIDIA</a> </li>
+                            <li> <a href="">Gabinetes</a> </li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li> <a href="">AMD</a> </li>
-                        <li> <a href="">NVIDIA</a> </li>
-                        <li> <a href="">Gabinetes</a> </li>
-                    </ul>
+
+                    <li class="lis">
+                        <a href="" class="home">Home</a>  
+                        <a href="" class="usuario">{{user.username}}</a>
+                        <a href="{% url 'logout' %}" class="salir">Salir</a>
+                    </li>
+
                 </div>
                 
-                        <li class="lis">
-                            <a href="" class="home">Home</a>  
-                            <a href="" class="usuario" ><box-icon name='user' class="icono_user"></box-icon>{{user.username}}</a>
-                        </li>
+                        
             </ul>
 
 
 
         </nav>
-
-        <div class="cartas">
-            {% for card in cards %} 
-                {% include 'cartas/Card.html' %}
-            {% endfor %}
+        
+        
+        <div class="grid-layout">
+            <div class="cartas">
+                {% for card in cards %} 
+                    {% include 'cartas/Card.html' %}
+                {% endfor %}
+            </div>
         </div>
             
         
