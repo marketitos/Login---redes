@@ -68,6 +68,8 @@ def logout_ashe(request):
     return redirect('signin')
 
 
+
+
 #def agregarProd(request, Cards_id):
     #carrito= carrito(request)
    # card = Cards.objects.get(id = Cards_id)

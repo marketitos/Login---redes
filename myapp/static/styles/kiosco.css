@@ -127,7 +127,7 @@ li{
 } 
 
 .lis .home{
-    margin-right: 70vh;
+    margin-right: 56vh;
 }
 
 .lis .usuario{
@@ -152,4 +152,8 @@ li{
 
 .agregar{
     color: black;
+}
+
+.ingresar{
+    margin-left: 30px;
 }
