@@ -9,10 +9,9 @@ urlpatterns = [
     path('', views.signup, name="signup"),
     path('kiosco/', views.kiosco, name='kiosco'),
     path('signin/', views.signin, name='signin'),
-    path('logout/', views.logout_ashe, name="logout")
-    
-    #path('agregar/<int:Cards_id>', agregar, name="Agregar"),
-    #path('eliminar/<int:Cards_id>', eliminar, name="Eliminar"),
-    #path('restar/<int:Cards_id>', restar, name="Restar"),
-    #path('limpiar/', limpiar, name="Clean")
+    path('logout/', views.logout_ashe, name="logout"), 
+    path('agregar/<int:Cards_id>', views.agregarProd, name="Agregar"),
+    path('eliminar/<int:Cards_id>', views.eliminarProd, name="Eliminar"),
+    path('restar/<int:Cards_id>', views.restarProd, name="Restar"),
+    path('limpiar/', views.clean, name="Clean")
 ]

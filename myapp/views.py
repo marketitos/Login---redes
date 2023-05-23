@@ -70,29 +70,29 @@ def logout_ashe(request):
 
 
 
-#def agregarProd(request, Cards_id):
-    #carrito= carrito(request)
-   # card = Cards.objects.get(id = Cards_id)
-    #carrito.agregar(card)
-    #return redirect("kiosco")
+def agregarProd(request, Cards_id):
+    carrito= carrito(request)
+    card = Cards.objects.get(id = Cards_id)
+    carrito.agregar(card)
+    return redirect("kiosco")
 
-#def eliminarProd(request, Cards_id):
-    #carrito= carrito(request)
-    #card = Cards.objects.get(id = Cards_id)
-    #carrito.eliminar(card)
-    #return redirect("kiosco")
+def eliminarProd(request, Cards_id):
+    carrito= carrito(request)
+    card = Cards.objects.get(id = Cards_id)
+    carrito.eliminar(card)
+    return redirect("kiosco")
 
-#def clean(request, Cards_id):
-    #carrito= carrito(request)
-    #card = Cards.objects.get(id = Cards_id)
-    #carrito.limpiar(card)
-    #return redirect("kiosco")
+def clean(request, Cards_id):
+    carrito= carrito(request)
+    card = Cards.objects.get(id = Cards_id)
+    carrito.limpiar(card)
+    return redirect("kiosco")
 
-#def restarProd(request, Cards_id):
-    #carrito= carrito(request)
-    #card = Cards.objects.get(id = Cards_id)
-    #carrito.restar(card)
-   # return redirect("kiosco") 
+def restarProd(request, Cards_id):
+    carrito= carrito(request)
+    card = Cards.objects.get(id = Cards_id)
+    carrito.restar(card)
+    return redirect("kiosco") 
 
             
         
