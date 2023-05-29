@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate, logout
 from django.db import IntegrityError
-from .models import Cards
+from .models import Cards, Categoria
  
 from myapp.carrito import Carrito
 
@@ -39,10 +39,15 @@ def signup(request):
             "error": 'Las contraseñas no coinciden'
             })
     
-def kiosco(request):
-    cards = Cards.objects.all()
+def kiosco(request, id):
+    if not id:
+
+        cards = Cards.objects.all()
+    categorias = Categoria.objects.all()
+    cards = Cards.objects.all().filter(categoria_id = id)
     return render(request, 'kiskco.html',{
-        'cards': cards
+        'cards': cards,
+        'categorias': categorias
     })
 
 def carrito(request):

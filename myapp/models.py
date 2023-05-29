@@ -8,16 +8,17 @@ from django.db import models
 #Hacer qeu las cartas no se acoplen y se pongan abajo 
 #arreglar la sidebar
 
+
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=200, default="")    
+    
+
 class Cards(models.Model):
     image = models.ImageField(null=True, blank=True, upload_to='images')
     titulo = models.CharField(max_length=200)
     price = models.IntegerField()
+    categoria = models.ForeignKey(Categoria, related_name="prodCat", on_delete=models.CASCADE, null=True)
 
     def _str_(self):
         return self.titulo
     
-    def __str__(self):
-        return f'{self.nombre} -> {self.precio}'
-
-class Categoria(models.Model):
-    categoria = models.CharField(max_length=200)        

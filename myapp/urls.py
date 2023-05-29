@@ -7,7 +7,7 @@ from django.contrib.auth.views import logout_then_login
 
 urlpatterns = [
     path('', views.signup, name="signup"),
-    path('kiosco/', views.kiosco, name='kiosco'),
+    path('kiosco/<int:id>', views.kiosco, name='kiosco'),
     path('signin/', views.signin, name='signin'),
     path('logout/', views.logout_ashe, name="logout"), 
     path('agregar/<int:Cards_id>', views.agregar_producto, name="Agregar"),

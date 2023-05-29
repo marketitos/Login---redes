@@ -21,9 +21,13 @@
                             <button class="cerrar_menu" id="abrir"><ion-icon name="reorder-three-outline" class="icono_barrita"></ion-icon></button>
                         </div>
                         <ul>
-                            <li> <a href="">AMD</a> </li>
-                            <li> <a href="">NVIDIA</a> </li>
-                            <li> <a href="">Gabinetes</a> </li>
+                            {% for cat in categorias %}
+                            <form action="{% url 'kiosco' cat.id %}">
+                                {% csrf_token %}
+                                <a href="{% url 'kiosco' cat.id %}">{{cat.nombre}}</a>
+             
+                            </form>
+                            {% endfor %}
                         </ul>
                     </div>
 
