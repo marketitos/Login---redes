@@ -29,8 +29,16 @@
  #sidebar ul li{
     display: flex;
     text-align: center;
-    justify-content: center;
+    justify-content: start;
     padding: 15px 10px;
+    
+ }
+
+ #sidebar ul li:hover{
+    transform: scale(1.02);
+
+    background-color: #2F3E46;
+    transition: all 500ms;
     
  }
 
