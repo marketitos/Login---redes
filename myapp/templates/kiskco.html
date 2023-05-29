@@ -21,10 +21,11 @@
                             <button class="cerrar_menu" id="abrir"><ion-icon name="reorder-three-outline" class="icono_barrita"></ion-icon></button>
                         </div>
                         <ul>
+                            <li><a href="{% url 'kiosco' %}">Inicio</a></li>
                             {% for cat in categorias %}
                             <form action="{% url 'filtro' cat.id %}">
                                 {% csrf_token %}
-                                <button>{{cat.nombre}}</button>
+                                <li><button>{{cat.nombre}}</button></li>
                             </form>
                             {% endfor %}
                         </ul>
