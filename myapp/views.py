@@ -15,6 +15,9 @@ def Home(request):
     return render(request,'home.html')
 
 
+def vender(request):
+    return render(request, 'vender.html')
+
 
 
 

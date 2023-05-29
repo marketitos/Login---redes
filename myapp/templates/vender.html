@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,21 +10,30 @@
     <section>
         <div class="formbox">
             <div class="formvalue">
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
 
 
-                        <h2>Login</h2>
-                        <div class="error">
-                            {{error}}
+                        <h2>Crear Producto</h2>
+>
+                        <div class="inputbox">
+                            <input type="image" name="Imagen">
+                            <label for="">Imagen</label>
+
                         </div>
                         <div class="inputbox">
-                            <ion-icon name="person-outline"></ion-icon>
-                            <input type="username" name="username" id="username" required>
-                            <label for="">Usuario</label>
+                            <input type="text" name="titulo">
+                            <label for="">Titulo</label>
                         </div>
+
                         <div class="inputbox">
-                            <input type="text" name="">
+                            <input type="text" name="price">
+                            <label for="">Precio</label>
+                        </div>
+
+                        <div class="inputbox">
+                            <input type="text" name="categoria">
+                            <label for="">Categoria</label>
                         </div>
                         <button>Crear Producto</button>
                 </form>
@@ -33,4 +42,4 @@
     </section>
     
 </body>
-</html> -->
+</html> 
