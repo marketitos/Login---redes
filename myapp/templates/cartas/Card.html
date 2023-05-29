@@ -9,7 +9,7 @@
           <h5 class="card-title">{{card.titulo}}</h5>
           <div class="precios">
             <h3 class="precio">${{card.price}} </h3>
-            <a class="agregar">Agregar al carrito</a>
+            <a href="{% url 'Agregar' card.id %}" class="agregar">Agregar al carrito</a>
             </div>
 
             <a href="" class="boton">Ver mas</a>

@@ -14,3 +14,6 @@ class Cards(models.Model):
     price = models.IntegerField()
     def _str_(self):
         return self.titulo
+    
+    def __str__(self):
+        return f'{self.nombre} -> {self.precio}'

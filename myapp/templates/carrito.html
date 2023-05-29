@@ -1,52 +1,67 @@
-<div>
-    <table>
-        <thead>
-            <tr>
-                <th>Carrito</th>
-            </tr>
-            <tr>
-                <th>Titulo </th>
-                <th>Precio </th>
-                <th>Cantidad </th>
-            </tr>
-        </thead>
-        <tbody>|
-            {% if request.session.carrito.items %}
-
-            {% for key, value in request.session.carrito.items %}
-                <tr class="text-center">
-
-                    <td>{{value.titulo}}</td>
-                    <td>{{value.cantidad}}</td>
-                    <td>
-                        
-                        <a href="{% url 'carrito:Agregar' value.Cards_id %}"></a>
-
-                        <a href="{% url 'carro:restar' value.Cards_id %}"></a><br>
-                        {{value.price}} ARS
-                    </td>
-
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/tabla.css' %}">
+</head>
+<body>
+    <a href="{% url 'kiosco' %}"><ion-icon class="flecha" name="chevron-back-outline"></ion-icon></a>
+    <div class="tablita">
+        <table>
+            <th class="titul">Carrito De Productos</th>
+            <thead>
+                <tr>
+                    <th>Titulo </th>
+                    <th>Precio </th>
+                    <th>Cantidad </th>
                 </tr>
+            </thead>
+            <tbody>
+                {% if request.session.carrito.items %}
+        
+                    {% for key, value in request.session.carrito.items %}
+                        <tr>
+        
+                            <td>{{value.titulo}}</td>
+                            
+                            <td class="precio">{{value.price}} ARS</td>
+                                
+                            <td>{{value.cantidad}}
+                                <a href="{% url 'Agregar' value.Cards_id %}"></a>
+                                <a href="{% url 'Restar' value.Cards_id %}"></a>
+                            </td>
+                                
+                        </tr>
+        
+                {% endfor %}
+    
+                {% else %}
+        
+                    <tr>
+                        <div class="SinP">No hay Productos existentes</div>
+                    </tr>
+        
+                {% endif %}
+                <tr>
+                    <th>Total: </th>
+                    <td>{{total_carrito}}</td>
+                </tr>
+            </tbody>
+        </table>
 
-            {% endfor %}
+    
+        <div><a class="limpiar" href="{% url 'Clean' %}"><ion-icon name="trash-outline"></ion-icon></a></div>
+    
+    
+    </div> 
 
-        {% else %}
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+</body>
+</html>
 
-            <tr>
-                <div>Sin Productos</div>
-            </tr>
-
-        {% endif %}
-            <tr>
-                <th>Total: </th>
-                <td>{{total_carrito}}</td>
-            </tr>
-        </tbody>
-    </table>
-    <hr>
-
-    <div><a href=""></a>Limpiar</div>
-    <div><a href=""></a>Guardar</div>
-
-
-</div> 

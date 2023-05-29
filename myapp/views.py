@@ -6,7 +6,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.db import IntegrityError
 from .models import Cards
  
-#from myapp.carrito import carrito
+from myapp.carrito import Carrito
 
 # Create your views here.
 
@@ -45,6 +45,9 @@ def kiosco(request):
         'cards': cards
     })
 
+def carrito(request):
+    return render(request, 'carrito.html')
+
 
 def signin(request):
     if request.method == 'GET':
@@ -69,39 +72,25 @@ def logout_ashe(request):
 
 
 
-
-def agregarProd(request, Cards_id):
-    carrito= carrito(request)
-    card = Cards.objects.get(id = Cards_id)
+def agregar_producto(request, Cards_id):
+    carrito = Carrito(request)
+    card = Cards.objects.get(id=Cards_id)
     carrito.agregar(card)
     return redirect("kiosco")
 
-def eliminarProd(request, Cards_id):
-    carrito= carrito(request)
-    card = Cards.objects.get(id = Cards_id)
+def eliminar_producto(request, Cards_id):
+    carrito = Carrito(request)
+    card = Cards.objects.get(id=Cards_id)
     carrito.eliminar(card)
     return redirect("kiosco")
 
-def clean(request, Cards_id):
-    carrito= carrito(request)
-    card = Cards.objects.get(id = Cards_id)
-    carrito.limpiar(card)
+def restar_producto(request, Cards_id):
+    carrito = Carrito(request)
+    card = Cards.objects.get(id=Cards_id)
+    carrito.restar(card)
     return redirect("kiosco")
 
-def restarProd(request, Cards_id):
-    carrito= carrito(request)
-    card = Cards.objects.get(id = Cards_id)
-    carrito.restar(card)
-    return redirect("kiosco") 
-
-            
-        
-
-
-
-
-
-    
-    
-
-
+def limpiar_carrito(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect("kiosco")
