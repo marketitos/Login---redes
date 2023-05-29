@@ -22,10 +22,9 @@
                         </div>
                         <ul>
                             {% for cat in categorias %}
-                            <form action="{% url 'kiosco' cat.id %}">
+                            <form action="{% url 'filtro' cat.id %}">
                                 {% csrf_token %}
-                                <a href="{% url 'kiosco' cat.id %}">{{cat.nombre}}</a>
-             
+                                <button>{{cat.nombre}}</button>
                             </form>
                             {% endfor %}
                         </ul>

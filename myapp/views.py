@@ -39,10 +39,17 @@ def signup(request):
             "error": 'Las contraseñas no coinciden'
             })
     
-def kiosco(request, id):
-    if not id:
+def kiosco(request):
 
-        cards = Cards.objects.all()
+
+    cards = Cards.objects.all()
+    categorias = Categoria.objects.all()
+    return render(request, 'kiskco.html',{
+        'cards': cards,
+        'categorias': categorias
+    })
+
+def filtro(request, id):
     categorias = Categoria.objects.all()
     cards = Cards.objects.all().filter(categoria_id = id)
     return render(request, 'kiskco.html',{
