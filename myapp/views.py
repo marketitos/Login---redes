@@ -9,6 +9,10 @@ from .models import Cards, Categoria
 from myapp.carrito import Carrito
 
 # Create your views here.
+# Crear vista para vender productos
+# Cambiar contraseña
+# Mejorar css carrito
+# Descripcion de los productos
 
 
 def Home(request):
