@@ -16,6 +16,7 @@ from myapp.carrito import Carrito
 # Cambiar contraseña
 # Mejorar css carrito
 # Descripcion de los productos
+# Agregar la foto de la publicacion a vender en el /media
 
 
 def Home(request):
@@ -125,6 +126,7 @@ def vender(request):
     if request.method == "POST":
         print(request.POST['categoria'])
         categoria = Categoria.objects.get(id = int(request.POST['categoria']))
+        
         producto = Cards.objects.create(image = request.POST["image"],titulo = request.POST["titulo"], price = request.POST["price"], categoria =categoria)
         producto.save()
     return render(request,'vender.html',{
