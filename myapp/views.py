@@ -5,7 +5,10 @@ from django.http import HttpResponse
 from django.contrib.auth import login, authenticate, logout
 from django.db import IntegrityError
 from .models import Cards, Categoria
- 
+from .forms import vender
+
+
+
 from myapp.carrito import Carrito
 
 # Create your views here.
@@ -116,3 +119,9 @@ def limpiar_carrito(request):
     carrito = Carrito(request)
     carrito.limpiar()
     return redirect("kiosco")
+
+def vender(request):
+    form = vender
+    return render(request,'vender.html',{
+        'form': form
+    })

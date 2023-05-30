@@ -7,39 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <section>
-        <div class="formbox">
-            <div class="formvalue">
-                <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-
-
-                        <h2>Crear Producto</h2>
->
-                        <div class="inputbox">
-                            <input type="image" name="Imagen">
-                            <label for="">Imagen</label>
-
-                        </div>
-                        <div class="inputbox">
-                            <input type="text" name="titulo">
-                            <label for="">Titulo</label>
-                        </div>
-
-                        <div class="inputbox">
-                            <input type="text" name="price">
-                            <label for="">Precio</label>
-                        </div>
-
-                        <div class="inputbox">
-                            <input type="text" name="categoria">
-                            <label for="">Categoria</label>
-                        </div>
-                        <button>Crear Producto</button>
-                </form>
-            </div>
-        </div>
-    </section>
+    {% csrf_token %}
+    {{form}}
     
 </body>
 </html> 
