@@ -1,10 +1,9 @@
 from dataclasses import fields
 from tkinter import Widget
 from django.forms import ModelForm
+from .models import Cards
 
-
-from models import Cards
 class vender(ModelForm):
     class Meta:
         model = Cards
-        fields= ['Image','Titulo','price','categoria']
+        fields= ['image','titulo','price','categoria']

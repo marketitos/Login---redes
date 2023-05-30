@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate, logout
 from django.db import IntegrityError
+from . import forms
 from .models import Cards, Categoria
-from .forms import vender
 
 
 
@@ -121,7 +121,9 @@ def limpiar_carrito(request):
     return redirect("kiosco")
 
 def vender(request):
-    form = vender
+    form = forms.vender
+    if request.method == "POST":
+        print(request.POST)
     return render(request,'vender.html',{
         'form': form
     })
