@@ -34,7 +34,7 @@
                     <li class="lis">
                         
                         {% if request.user.is_staff %}
-                            <a href="{% url 'Vender' %}" class="vender">Vender</a>
+                            <a href="{% url 'vender' %}" class="vender">Vender</a>
                         {% endif %}
                         <a href="" class="usuario"><box-icon name='user' class="user"></box-icon>{{user.username}}</a>
                         {% if request.user.is_authenticated %}

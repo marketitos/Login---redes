@@ -7,8 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    {% csrf_token %}
-    {{form}}
+    <form action="{% url 'vender' %}" method="POST">
+        {% csrf_token %}
+
+        {{form}}
+        <button>ashe</button>
+    </form>
+  
     
 </body>
 </html> 
