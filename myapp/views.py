@@ -121,6 +121,12 @@ def limpiar_carrito(request):
     carrito.limpiar()
     return redirect("kiosco")
 
+
+def eliminar(request, Cards_id):
+    prod = Cards.objects.get(id = Cards_id)
+    prod.delete()
+    return redirect("kiosco")
+
 def vender(request):
     form = forms.vender
     if request.method == "POST":
