@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
 *{
     font-family: 'Rajdhani', sans-serif;
-    color: white;
+    
     margin: 0;
     padding: 0;
 
@@ -154,9 +154,6 @@ li{
     font-size: 20px;
 }
 
-.user{
-    color: white;
-}
 
 .agregar{
     color: black;
@@ -193,7 +190,14 @@ li{
 }
 
 button{
-   
+    color: white;
     background: none;
     border: none;
+}
+
+.card, .card_borrar{
+    color: red;
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
 }

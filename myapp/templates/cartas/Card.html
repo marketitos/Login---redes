@@ -1,33 +1,36 @@
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'styles/kiosco.css' %}">
-
+</head>
+<body>
     <div class="card" style="width: 18rem;">
-        <div >
-          <img src="{{card.image.url}}" alt="" class="card-img-top">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{card.titulo}}</h5>
-          <div class="precios">
-            <h3 class="precio">${{card.price}} </h3>
-            <a onclick="alertita()" href="{% url 'Agregar' card.id %}" class="agregar">Agregar al carrito</a>
-            </div>
+      {% if request.user.is_staff %}
+        <a href="" class="card_borrar">Borrar</a>
+      {% endif %}
+      <div >
+        <img src="{{card.image.url}}" alt="" class="card-img-top">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{card.titulo}}</h5>
+        <div class="precios">
+          <h3 class="precio">${{card.price}} </h3>
+          <a href="{% url 'Agregar' card.id %}" class="agregar">Agregar al carrito</a>
+          </div>
 
-            <a href="" class="boton">Ver mas</a>
-        </div>
-    </div>
+          <a href="" class="boton">Ver mas</a>
+      </div>
+  </div>
 
-<!--     <script>
-      function alertita(){
-        Swal.fire({
-          title: "asd realizada",
-          confirmButtonText: "Aceptar",
-          icon:"success"
-        });
-      }
-    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="sweetalert2.all.min.js"></script> -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+  
+
 

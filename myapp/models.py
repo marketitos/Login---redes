@@ -11,6 +11,9 @@ from django.db import models
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=200, default="")    
+
+    def _str_(self):
+        return self.nombre
     
 
 class Cards(models.Model):
