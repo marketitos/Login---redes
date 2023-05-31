@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,15 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/vender.css' %}">
 </head>
 <body>
-    <form action="{% url 'vender' %}" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
+    <a href="{% url 'kiosco' %}"><ion-icon name="arrow-back-outline" class="flecha"></ion-icon></a>
+    <section>
+        
+        <div class="cajita">
+            <form action="{% url 'vender' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
 
-        {{form}}
-        <button>ashe</button>
-    </form>
+                    {{form}}
+                    <button>Crear</button>
+            
+            </form>
+        </div>
+    </section>
   
-    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html> 

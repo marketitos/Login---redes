@@ -11,12 +11,12 @@ from .models import Cards, Categoria
 
 from myapp.carrito import Carrito
 
-# Create your views here.
-# Crear vista para vender productos
-# Cambiar contraseña
-# Mejorar css carrito
-# Descripcion de los productos
-# Agregar la foto de la publicacion a vender en el /media
+
+# Crear vista para vender productos - Completado
+# Cambiar contraseña - Pendiente
+# Mejorar css carrito - Pendiente
+# Descripcion de los productos - Por si pinta hacerlo
+# Agregar la foto de la publicacion a vender en el /media - Completado corta
 
 
 def Home(request):
