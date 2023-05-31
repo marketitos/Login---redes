@@ -127,7 +127,7 @@ def vender(request):
         print(request.POST['categoria'])
         categoria = Categoria.objects.get(id = int(request.POST['categoria']))
         
-        producto = Cards.objects.create(image = request.POST["image"],titulo = request.POST["titulo"], price = request.POST["price"], categoria =categoria)
+        producto = Cards.objects.create(image = request.FILES["image"],titulo = request.POST["titulo"], price = request.POST["price"], categoria= categoria)
         producto.save()
     return render(request,'vender.html',{
         'form': form
