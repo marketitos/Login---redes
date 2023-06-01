@@ -2,6 +2,7 @@ from unicodedata import name
 from django.urls import path
 from myapp import views
 from .views import logout
+from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import logout_then_login , PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 #from myapp.carrito import agregar, eliminar, limpiar, restar 
 
@@ -17,5 +18,9 @@ urlpatterns = [
     path('limpiar/', views.limpiar_carrito, name="Clean"),
     path('carrito/', views.carrito, name="carrito"),
     path('Vender/', views.vender, name="vender"),
-    path('eliminarProd/<int:Cards_id>', views.eliminar, name="eliminar_prod")
+    path('eliminarProd/<int:Cards_id>', views.eliminar, name="eliminar_prod"),
+    path('resetearContra/', auth_views.PasswordResetView.as_view(template_name=""), name="password_reset"),
+    path('resetear_contra_send/', auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
+    path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
+    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
 ]
