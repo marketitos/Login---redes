@@ -1,5 +1,18 @@
 *{
     font-family: 'Rajdhani', sans-serif;
     text-decoration: none;
+    color: white;
+    text-align: center;
 }
 
+body{
+    background: url("mountains-minimalist-scenery-wallpaper-2560x1600_7.jpg") no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+}
+
+.botonsin{
+    color: black;
+}
