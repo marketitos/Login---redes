@@ -25,7 +25,7 @@ section{
 .formbox{
     position: relative;
     width: 410px;
-    height: 650px;
+    height: 660px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,8 @@ section{
 
 .titulo{
     color: white;
-    margin-top: 30px;
+    margin-top: 10px;
+
 }
 
 .login{
@@ -156,7 +157,7 @@ h2{
     font-size: .9em;
     color: white;
     text-align: center;
-    margin: 20px 0 10px;
+    margin: 10px 0 10px;
 }
 .register p a{
     text-decoration: none;
