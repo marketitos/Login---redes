@@ -24,4 +24,6 @@ class Cards(models.Model):
 
     def _str_(self):
         return self.titulo
+
+
     
