@@ -13,11 +13,10 @@ from .models import Cards, Categoria
 from myapp.carrito import Carrito
 
 
-# Crear vista para vender productos - Completado
-# Cambiar contraseña - usar template name para darle una vista independiente y no usar la de django - Pendiente
 # Mejorar css carrito - Pendiente
 # Descripcion de los productos - Por si pinta hacerlo
-# Agregar la foto de la publicacion a vender en el /media - Completado corta
+# Editar los productos
+
 
 
 def Home(request):
