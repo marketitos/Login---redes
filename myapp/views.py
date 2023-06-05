@@ -141,15 +141,18 @@ def vender(request):
     })
 
 
-def refreshCard(request, Cards_id):
+def editar_prod(request, Cards_id):
+    form = forms.vender
     carta = Cards.objects.get(id = Cards_id)
     if request.method == "POST":
         print(request.POST['categoria'])
         categoria = Categoria.objects.get(id = int(request.POST['categoria']))
-        
-        producto = Cards.objects.create(image = request.FILES["image"],titulo = request.POST["titulo"], price = request.POST["price"], categoria= categoria)
-        producto.save()
-    return render(request,'vender.html',{
+        carta.image = request.FILES["image"]   
+        carta.nombre = request.POST["titulo"]   
+        carta.price = request.POST["price"]   
+        carta.categoria = categoria
+        carta.save()
+    return render(request,'editar.html',{
         'form': form
     })
         
