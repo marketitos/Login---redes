@@ -6,6 +6,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.db import IntegrityError
 from . import forms
 from .models import Cards, Categoria
+from django.shortcuts import get_object_or_404
 
 
 
@@ -138,3 +139,17 @@ def vender(request):
     return render(request,'vender.html',{
         'form': form
     })
+
+
+def refreshCard(request, Cards_id):
+    carta = Cards.objects.get(id = Cards_id)
+    if request.method == "POST":
+        print(request.POST['categoria'])
+        categoria = Categoria.objects.get(id = int(request.POST['categoria']))
+        
+        producto = Cards.objects.create(image = request.FILES["image"],titulo = request.POST["titulo"], price = request.POST["price"], categoria= categoria)
+        producto.save()
+    return render(request,'vender.html',{
+        'form': form
+    })
+        

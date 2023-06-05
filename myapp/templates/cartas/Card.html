@@ -10,7 +10,10 @@
 <body>
     <div class="card" style="width: 18rem;">
       {% if request.user.is_staff %}
-        <a href="{% url 'eliminar_prod' card.id %}" class="card_borrar">Borrar</a>
+        <div class="editar_eliminar">
+          <a href="{% url 'eliminar_prod' card.id %}" class="card_borrar">Borrar</a>
+          <a href="{% %}" class="card_editar">Editar</a>
+        </div>
       {% endif %}
       <div >
         <img src="{{card.image.url}}" alt="" class="card-img-top">

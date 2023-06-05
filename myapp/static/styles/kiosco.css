@@ -197,9 +197,24 @@ button{
     border: none;
 }
 
+.card, .card_editar{
+    color: black;
+    display: flex;
+    justify-content: start;
+    margin-right: 10px;
+    
+}
+
 .card, .card_borrar{
     color: red;
     display: flex;
     justify-content: end;
     margin-right: 10px;
 }
+
+.card, .editar_eliminar{
+    display: flex;
+    align-items: center;
+    
+}
+
