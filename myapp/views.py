@@ -6,7 +6,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.db import IntegrityError
 from . import forms
 from .models import Cards, Categoria
-from django.shortcuts import get_object_or_404
+
 
 
 
