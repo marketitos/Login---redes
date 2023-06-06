@@ -140,7 +140,7 @@ def vender(request):
     })
 
 
-def editar_prod(request, Cards_id):
+""" def editar_prod(request, Cards_id):
     form = forms.vender
     carta = Cards.objects.get(id = Cards_id)
     if request.method == "POST":
@@ -153,5 +153,5 @@ def editar_prod(request, Cards_id):
         carta.save()
     return render(request,'editar.html',{
         'form': form
-    })
+    }) """
         

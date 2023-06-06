@@ -20,9 +20,10 @@ urlpatterns = [
     path('carrito/', views.carrito, name="carrito"),
     path('Vender/', views.vender, name="vender"),
     path('eliminarProd/<int:Cards_id>', views.eliminar, name="eliminar_prod"),
-    path('editarProd/<int:Cards_id>', views.editar_prod, name="editar_prod"),
+    
     path('resetearContra/', auth_views.PasswordResetView.as_view(template_name="ResetarPssw/resetview.html"), name="password_reset"),
     path('resetear_contra_send/', auth_views.PasswordResetDoneView.as_view(template_name="ResetarPssw/password_reset_done.html"), name="password_reset_done"),
     path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(template_name="ResetarPssw/password_reset_confirm.html"), name="password_reset_confirm"),
     path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name="ResetarPssw/password_reset_complete.html"), name="password_reset_complete"),
+    #path('editarProd/<int:Cards_id>', views.editar_prod, name="editar_prod"),
 ]
