@@ -7,3 +7,5 @@ class vender(ModelForm):
     class Meta:
         model = Cards
         fields= ['image','titulo','price','categoria']
+
+

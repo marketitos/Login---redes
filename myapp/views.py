@@ -140,10 +140,14 @@ def vender(request):
     })
 
 
-""" def editar_prod(request, Cards_id):
+def editar_prod(request, Cards_id):
     form = forms.vender
-    carta = Cards.objects.get(id = Cards_id)
+    print(Cards_id)
+    carta = None
     if request.method == "POST":
+
+        carta = Cards.objects.get(id = Cards_id)
+        print("---------------------------------------------------------------")
         print(request.POST['categoria'])
         categoria = Categoria.objects.get(id = int(request.POST['categoria']))
         carta.image = request.FILES["image"]   
@@ -151,7 +155,10 @@ def vender(request):
         carta.price = request.POST["price"]   
         carta.categoria = categoria
         carta.save()
-    return render(request,'editar.html',{
-        'form': form
-    }) """
+        return redirect('/')
+    else:
+        return render(request,'editar.html',{
+            'form': form,
+            'card': carta,
+        }) 
         
