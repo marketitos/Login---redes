@@ -152,11 +152,11 @@ def editar_prod(request, Cards_id):
         print(request.POST['categoria'])
         categoria = Categoria.objects.get(id = int(request.POST['categoria']))
         carta.image = request.FILES["image"]   
-        carta.nombre = request.POST["titulo"]   
+        carta.titulo = request.POST["titulo"]   
         carta.price = request.POST["price"]   
         carta.categoria = categoria
         carta.save()
-        return redirect('/')
+        return redirect('kiosco/')
     else:
         return render(request,'editar.html',{
             'form': form,
