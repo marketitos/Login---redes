@@ -144,8 +144,9 @@ def editar_prod(request, Cards_id):
     form = forms.vender
     print(Cards_id)
     carta = None
-    if request.method == "POST":
 
+    print(request.method)
+    if request.method == 'POST':
         carta = Cards.objects.get(id = Cards_id)
         print("---------------------------------------------------------------")
         print(request.POST['categoria'])
@@ -160,5 +161,6 @@ def editar_prod(request, Cards_id):
         return render(request,'editar.html',{
             'form': form,
             'card': carta,
+            'card_id': Cards_id
         }) 
         
