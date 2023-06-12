@@ -156,7 +156,7 @@ def editar_prod(request, Cards_id):
         carta.price = request.POST["price"]   
         carta.categoria = categoria
         carta.save()
-        return redirect('kiosco/')
+        return redirect('kiosco')
     else:
         return render(request,'editar.html',{
             'form': form,
