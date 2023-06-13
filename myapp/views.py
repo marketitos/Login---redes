@@ -135,6 +135,7 @@ def vender(request):
         
         producto = Cards.objects.create(image = request.FILES["image"],titulo = request.POST["titulo"], price = request.POST["price"], categoria= categoria)
         producto.save()
+        return redirect('kiosco')
     return render(request,'vender.html',{
         'form': form
     })
@@ -146,8 +147,9 @@ def editar_prod(request, Cards_id):
     carta = None
 
     print(request.method)
+    carta = Cards.objects.get(id = Cards_id)
+    formulario = form(instance=carta)
     if request.method == 'POST':
-        carta = Cards.objects.get(id = Cards_id)
         print("---------------------------------------------------------------")
         print(request.POST['categoria'])
         categoria = Categoria.objects.get(id = int(request.POST['categoria']))
@@ -159,7 +161,7 @@ def editar_prod(request, Cards_id):
         return redirect('kiosco')
     else:
         return render(request,'editar.html',{
-            'form': form,
+            'form': formulario,
             'card': carta,
             'card_id': Cards_id
         }) 
